@@ -1,0 +1,30 @@
+class ZooShow:
+    def __init__(self):
+        #  шоу
+        self.shows = {
+            1: {"name": "Шоу дельфинов", "price": 800, "description": "Весёлое представление с дельфинами, прыжками и трюками в воде."},
+            2: {"name": "Шоу тигров", "price": 1200, "description": "Захватывающее выступление тигров и дрессировщиков."},
+            3: {"name": "Шоу львов", "price": 1200, "description": "Прыжки львов и проход по кругу."},
+            4: {"name": "Шоу медведей", "price": 1500, "description": "Фотосессия и цирковые трюки."}
+        }
+
+    def info(self):
+        print("Добро пожаловать в Зоо-шоу!\nВот список представлений:\n")
+        for key, value in self.shows.items():
+            print(f"{key}. {value['name']}")
+            print(f"   Описание: {value['description']}")
+            print(f"   Цена билета: {value['price']} руб.\n")
+
+    def choose_show(self):
+        """Позволяет выбрать шоу"""
+        choice = int(input("Введите номер шоу, которое хотите посетить: "))
+        if choice in self.shows:
+            show = self.shows[choice]
+            print(f"\nВы выбрали: {show['name']}")
+            print(f"Описание: {show['description']}")
+            print(f"Стоимость билета: {show['price']} руб.")
+            print("Приятного просмотра!")
+
+zoo = ZooShow()
+zoo.info()
+zoo.choose_show()
